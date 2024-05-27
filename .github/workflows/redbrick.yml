@@ -7,11 +7,13 @@ on:
     paths:
       - __apps/redbrick-frontend/**
       - __apps/redbrick-backend/**
+      - __packages/ui
       - .github/workflows/redbrick.yml
   pull_request:
     paths:
       - __apps/redbrick-frontend/**
       - __apps/redbrick-backend/**
+      - __packages/ui
       - .github/workflows/redbrick.yml
 
 jobs:
