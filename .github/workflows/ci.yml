@@ -1,0 +1,12 @@
+name: CI
+on:
+ push:
+  branches:
+   - main
+ pull_requests:
+
+jobs:
+ main:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "This is our workflow"
