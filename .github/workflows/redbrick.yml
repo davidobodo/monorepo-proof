@@ -13,7 +13,7 @@ on:
       - .github/workflows/redbrick.yml
 
 jobs:
-  lint:
+  fe-lint:
     runs-on: ubuntu-latest
     env:
       working-directory: ./__apps/redbrick-frontend
@@ -36,9 +36,9 @@ jobs:
         run: pnpm run lint
         working-directory: ${{ env.working-directory }}
 
-  test:
+  fe-test:
     runs-on: ubuntu-latest
-    needs: lint
+    needs: fe-lint
     env:
       working-directory: ./__apps/redbrick-frontend
     steps:
@@ -60,9 +60,9 @@ jobs:
         run: pnpm run test
         working-directory: ${{ env.working-directory }}
 
-  build:
+  fe-build:
     runs-on: ubuntu-latest
-    needs: test
+    needs: fe-test
     env:
       working-directory: ./__apps/redbrick-frontend
     steps:
