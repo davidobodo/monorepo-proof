@@ -3,27 +3,32 @@ on:
  push:
   branches:
    - main
+  paths:
+   - __apps/second-app/**
+   - .github/workflows/secondapp-tests.yml
  pull_request:
+  paths:
+   - __apps/second-app/**
+   - .github/workflows/secondapp-tests.yml
 
 jobs:
  main:
   runs-on: ubuntu-latest
   env:
-      working-directory: ./__apps/second-app
+   working-directory: ./__apps/second-app
   steps:
-    - uses: actions/checkout@v4
-      with: 
-        fetch-depth: 0
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 8
-    - name: Install dependencies 
-      run: pnpm install
-      working-directory: ${{env.working-directory}}
-    - name: Check lint
-      run: pnpm run lint
-      working-directory: ${{env.working-directory}}
-    - name: Run tests
-      run: pnpm run test
-      working-directory: ${{env.working-directory}}
-   
+   - uses: actions/checkout@v4
+     with:
+      fetch-depth: 0
+   - uses: pnpm/action-setup@v2
+     with:
+      version: 8
+   - name: Install dependencies
+     run: pnpm install
+     working-directory: ${{env.working-directory}}
+   - name: Check lint
+     run: pnpm run lint
+     working-directory: ${{env.working-directory}}
+   - name: Run tests
+     run: pnpm run test
+     working-directory: ${{env.working-directory}}
