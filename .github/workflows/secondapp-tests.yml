@@ -5,9 +5,11 @@ on:
    - main
   paths:
    - __apps/second-app/**
+   - .github/workflows/secondapp-tests.yml
  pull_request:
   paths:
    - __apps/second-app/**
+   - .github/workflows/secondapp-tests.yml
 
 jobs:
  main:
