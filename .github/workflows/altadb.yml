@@ -32,3 +32,6 @@ jobs:
    - name: Run tests
      run: pnpm run test
      working-directory: ${{env.working-directory}}
+   - name: Build AltaDB frontend
+     run: pnpm run build
+     working-directory: ${{env.working-directory}}
