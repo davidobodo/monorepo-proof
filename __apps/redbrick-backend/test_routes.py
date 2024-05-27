@@ -10,7 +10,7 @@ class RoutesTestCase(unittest.TestCase):
     def test_get_data(self):
         response = self.client.get('/api/data')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json, {"data": "Here is some data from Redbrick Server"})
+        self.assertEqual(response.json, {"data": "Here is some data from Redbrick Server."})
 
 
 if __name__ == '__main__':
