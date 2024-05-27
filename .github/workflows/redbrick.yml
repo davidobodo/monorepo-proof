@@ -38,6 +38,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: lint
     env:
       working-directory: ./__apps/redbrick-frontend
     steps:
@@ -61,6 +62,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs: test
     env:
       working-directory: ./__apps/redbrick-frontend
     steps:
