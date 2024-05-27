@@ -1,3 +1,3 @@
 packages:
- - "__apps/first-app"
- - "__apps/second-app"
+ - "__apps/redbrick-frontend"
+ - "__apps/altadb-frontend"
