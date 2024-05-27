@@ -4,11 +4,11 @@ import axios from "axios";
 
 const API_URL = "http://127.0.0.1:5001";
 
-export const getData = () => {
+const getData = () => {
 	return axios.get(`${API_URL}/api/data`);
 };
 
-export const getStatus = () => {
+const getStatus = () => {
 	return axios.get(`${API_URL}/api/status`);
 };
 
@@ -21,7 +21,7 @@ function App() {
 			const response = await getData();
 			setData(response.data);
 		} catch (error) {
-			console.error("Error fetching data:", error);
+			alert(error);
 		}
 	};
 
@@ -30,7 +30,7 @@ function App() {
 			const response = await getStatus();
 			setStatus(response.data);
 		} catch (error) {
-			console.error("Error fetching status:", error);
+			alert(error);
 		}
 	};
 
