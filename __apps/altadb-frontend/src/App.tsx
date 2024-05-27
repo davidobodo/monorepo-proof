@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
+import { Button } from "ui";
 
 const API_URL = "http://127.0.0.1:5002";
 
@@ -37,8 +38,8 @@ function App() {
 		<>
 			<h1>THE SECOND APPLICATION</h1>
 			<p>Add paragraph into second app, and now alter it </p>
-			<button onClick={handleGetData}>Get Data</button>
-			<buton onClick={handleGetStatus}>Get Status</buton>
+			<Button onClick={handleGetData} text="Get Data" />
+			<Button onClick={handleGetStatus} text="Get Status" />
 
 			<div>
 				<h2>Data:</h2>
