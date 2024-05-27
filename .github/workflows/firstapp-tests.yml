@@ -18,7 +18,7 @@ jobs:
       with:
         version: 8
     - name: Install dependencies 
-      run: pnpm install --frozen-lockfile
+      run: pnpm install
       working-directory: ${{env.working-directory}}
     - name: Check lint
       run: pnpm run lint
