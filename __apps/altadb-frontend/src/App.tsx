@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "http://127.0.0.1:5002";
 
 export const getData = () => {
 	return axios.get(`${API_URL}/api/data`);
