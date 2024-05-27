@@ -1,37 +1,121 @@
-name: First App Tests
+name: Redbrick
+
 on:
- push:
-  branches:
-   - main
-  paths:
-   - __apps/redbrick-frontend/**
-   - .github/workflows/redbrick.yml
- pull_request:
-  paths:
-   - __apps/redbrick-frontend/**
-   - .github/workflows/redbrick.yml
+  push:
+    branches:
+      - main
+    paths:
+      - __apps/redbrick-frontend/**
+      - .github/workflows/redbrick.yml
+  pull_request:
+    paths:
+      - __apps/redbrick-frontend/**
+      - .github/workflows/redbrick.yml
 
 jobs:
- main:
-  runs-on: ubuntu-latest
-  env:
-   working-directory: ./__apps/redbrick-frontend
-  steps:
-   - uses: actions/checkout@v4
-     with:
-      fetch-depth: 0
-   - uses: pnpm/action-setup@v2
-     with:
-      version: 8
-   - name: Install dependencies
-     run: pnpm install
-     working-directory: ${{env.working-directory}}
-   - name: Check lint
-     run: pnpm run lint
-     working-directory: ${{env.working-directory}}
-   - name: Run tests
-     run: pnpm run test
-     working-directory: ${{env.working-directory}}
-   - name: Build AltaDB frontend
-     run: pnpm run build
-     working-directory: ${{env.working-directory}}
+  rb-fe-lint:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./__apps/redbrick-frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: ${{ env.working-directory }}
+
+      - name: Check lint
+        run: pnpm run lint
+        working-directory: ${{ env.working-directory }}
+
+  rb-fe-test:
+    runs-on: ubuntu-latest
+    needs: rb-fe-lint
+    env:
+      working-directory: ./__apps/redbrick-frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: ${{ env.working-directory }}
+
+      - name: Run tests
+        run: pnpm run test
+        working-directory: ${{ env.working-directory }}
+
+  rb-fe-build:
+    runs-on: ubuntu-latest
+    needs: rb-fe-test
+    env:
+      working-directory: ./__apps/redbrick-frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: ${{ env.working-directory }}
+
+      - name: Build AltaDB frontend
+        run: pnpm run build
+        working-directory: ${{ env.working-directory }}
+
+  rb-fe-deploy:
+    runs-on: ubuntu-latest
+    needs: rb-fe-build
+    env:
+      working-directory: ./__apps/redbrick-frontend
+    steps:
+      - run: echo "Deploy Redbrick frontend to host"
+  
+  rb-be-test:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./__apps/redbrick-backend
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+      working-directory: ${{ env.working-directory }}
+
+    - name: Run tests
+      run: |
+        source venv/bin/activate
+        pytest
+      working-directory: ${{ env.working-directory }}
+            
