@@ -7,11 +7,13 @@ on:
     paths:
       - __apps/altadb-frontend/**
       - __apps/altadb-backend/**
+      - __packages/ui
       - .github/workflows/altadb.yml
   pull_request:
     paths:
       - __apps/altadb-frontend/**
       - __apps/altadb-backend/**
+      - __packages/ui
       - .github/workflows/altadb.yml
 
 jobs:
