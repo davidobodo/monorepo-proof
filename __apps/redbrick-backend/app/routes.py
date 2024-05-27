@@ -3,11 +3,11 @@ from flask import jsonify, request
 
 @app.route('/')
 def index():
-    return jsonify({"message": "Welcome to the simple Redbrick Server"})
+    return jsonify({"message": "Welcome to the simple Redbrick Server."})
 
 @app.route('/api/data', methods=['GET'])
 def get_data():
-    data = {"data": "Here is some data from Redbrick Server"}
+    data = {"data": "Here is some data from Redbrick Server."}
     return jsonify(data)
 
 @app.route('/api/status', methods=['GET'])
