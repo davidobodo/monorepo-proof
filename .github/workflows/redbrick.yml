@@ -6,10 +6,12 @@ on:
       - main
     paths:
       - __apps/redbrick-frontend/**
+      - __apps/redbrick-backend/**
       - .github/workflows/redbrick.yml
   pull_request:
     paths:
       - __apps/redbrick-frontend/**
+      - __apps/redbrick-backend/**
       - .github/workflows/redbrick.yml
 
 jobs:
