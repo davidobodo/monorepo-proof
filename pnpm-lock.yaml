@@ -65,6 +65,9 @@ importers:
 
   __apps/redbrick-frontend:
     dependencies:
+      axios:
+        specifier: ^1.7.2
+        version: 1.7.2
       react:
         specifier: ^18.2.0
         version: 18.3.1
