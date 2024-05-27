@@ -1,0 +1,12 @@
+name: First App Tests
+on:
+ push:
+  branches:
+   - main
+ pull_request:
+
+jobs:
+ main:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "This is our workflow in the root"
