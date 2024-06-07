@@ -36,12 +36,14 @@ function App() {
 			alert(error);
 		}
 	};
+
+	console.log("In her");
 	return (
 		<>
 			<h1>THE SECOND APPLICATION</h1>
 			<p>
 				Add paragraph into second app, and now alter it. This day at noon with more text. Add more text, another and more
-				and more text
+				again and more text again
 			</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />

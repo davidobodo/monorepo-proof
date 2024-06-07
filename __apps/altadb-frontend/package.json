@@ -10,7 +10,8 @@
 		"preview": "vite preview",
 		"test": "vitest",
 		"release": "release-it",
-		"prepare": "echo 'David'"
+		"prepare": "echo 'David'",
+		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
 		"axios": "^1.7.2",
@@ -36,7 +37,8 @@
 		"vitest": "^1.6.0",
 		"release-it": "17.3.0",
 		"@znt/release": "workspace:*",
-		"husky": "8.0.3"
+		"husky": "8.0.3",
+		"lint-staged": "^15.2.2"
 	},
 	"husky": {
 		"hooks": {
@@ -46,8 +48,7 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
-			"eslint --fix",
-			"git add"
+			"eslint --fix"
 		]
 	}
 }
