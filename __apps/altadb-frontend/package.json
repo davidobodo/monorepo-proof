@@ -10,7 +10,6 @@
 		"preview": "vite preview",
 		"test": "vitest",
 		"release": "release-it",
-		"prepare": "echo 'David'",
 		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
@@ -38,7 +37,16 @@
 		"release-it": "17.3.0",
 		"@znt/release": "workspace:*",
 		"husky": "8.0.3",
-		"lint-staged": "^15.2.2"
+		"lint-staged": "^15.2.2",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"@commitlint/cli": "17.6.1",
+		"@commitlint/config-conventional": "17.6.1"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
 	},
 	"husky": {
 		"hooks": {

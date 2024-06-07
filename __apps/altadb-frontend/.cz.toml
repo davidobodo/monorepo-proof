@@ -1,0 +1,64 @@
+# https://commitizen-tools.github.io/commitizen/
+# Install:
+#   1. brew install commitizen
+#   2. pip install commitizen
+# Usage: cz commit
+
+[tool.commitizen]
+name = "cz_customize"
+tag_format = "v$version"
+version_scheme = "pep440"
+version_files = [
+    "backend/pyproject.toml",
+    "frontend/package.json",
+    "e2etesting/package.json",
+    "deployment/package.json",
+]
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""],
+    ["text", ""],
+    ["disabled", "fg:#858585 italic"]
+]
+
+
+[tool.commitizen.customize]
+message_template = "{{stack}} - :{{type}}: {{title}}"
+schema_pattern = "^(back|front|app|e2e|gh|sop|comp) - (:zap:|:bug:|:tv:|:cop:|:abc:) .{1,80}"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "stack"
+choices = [
+    {value = "back", name = "back: Backend"},
+    {value = "front", name = "front: Frontend"},
+    {value = "app", name = "app: Entire application"},
+    {value = "e2e", name = "e2e: E2E tests"},
+    {value = "gh", name = "gh: Github actions"},
+    {value = "sop", name = "sop: General SOP"},
+    {value = "comp", name = "comp: Compliance"},
+]
+message = "Select the affected stack"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "type"
+choices = [
+    {value = "zap", name = "zap: Feature or improvement"},
+    {value = "bug", name = "bug: Bug fix"},
+    {value = "tv", name = "tv: Views, updates or tests"},
+    {value = "cop", name = "cop: Quality standards"},
+    {value = "abc", name = "abc: Docs, SOP, etc."},
+]
+message = "Select the type of change"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "title"
+message = "Message"
