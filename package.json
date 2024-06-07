@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"commit": "cz"
 	},
 	"keywords": [],
 	"author": "",
@@ -12,6 +12,8 @@
 	"devDependencies": {
 		"@commitlint/cli": "17.6.1",
 		"@commitlint/config-conventional": "17.6.1",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
 		"husky": "8.0.3"
 	},
 	"pnpm": {
@@ -19,6 +21,11 @@
 			"@b12k/mvm": "0.0.10",
 			"@release-it/conventional-changelog": "5.1.1",
 			"release-it": "17.3.0"
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
 		}
 	}
 }
