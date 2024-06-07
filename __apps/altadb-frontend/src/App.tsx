@@ -37,7 +37,7 @@ function App() {
 	return (
 		<>
 			<h1>THE SECOND APPLICATION</h1>
-			<p>Add paragraph into second app, and now alter it. This day at noon</p>
+			<p>Add paragraph into second app, and now alter it. This day at noon with more text</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />
 
