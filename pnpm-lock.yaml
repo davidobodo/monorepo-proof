@@ -47,6 +47,12 @@ importers:
         specifier: workspace:*
         version: link:../../__packages/ui
     devDependencies:
+      '@commitlint/cli':
+        specifier: 17.6.1
+        version: 17.6.1
+      '@commitlint/config-conventional':
+        specifier: 17.6.1
+        version: 17.6.1
       '@testing-library/jest-dom':
         specifier: ^6.4.5
         version: 6.4.5(vitest@1.6.0(@types/node@20.5.1)(jsdom@24.1.0))
@@ -71,6 +77,12 @@ importers:
       '@znt/release':
         specifier: workspace:*
         version: link:../../__packages/release
+      commitizen:
+        specifier: ^4.3.0
+        version: 4.3.0
+      cz-conventional-changelog:
+        specifier: ^3.3.0
+        version: 3.3.0
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -80,9 +92,15 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.6
         version: 0.4.7(eslint@8.57.0)
+      husky:
+        specifier: 8.0.3
+        version: 8.0.3
       jsdom:
         specifier: ^24.1.0
         version: 24.1.0
+      lint-staged:
+        specifier: ^15.2.2
+        version: 15.2.5
       release-it:
         specifier: 17.3.0
         version: 17.3.0(typescript@5.4.5)
