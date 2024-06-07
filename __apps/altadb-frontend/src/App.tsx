@@ -43,7 +43,7 @@ function App() {
 			<h1>THE SECOND APPLICATION</h1>
 			<p>
 				Add paragraph into second app, and now alter it. This day at noon with more text. Add more text, another and more
-				again and more text again here and there
+				again and more text again here and therezx zz
 			</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />
