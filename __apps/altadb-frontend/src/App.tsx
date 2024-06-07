@@ -5,6 +5,8 @@ import { Button } from "ui";
 
 const API_URL = "http://127.0.0.1:5002";
 
+console.log("In here");
+
 const getData = () => {
 	return axios.get(`${API_URL}/api/data`);
 };
