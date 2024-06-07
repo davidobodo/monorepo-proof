@@ -1,0 +1,6 @@
+# run backend related commit commands in background
+set -e
+
+# ./backend/hooks/pre-commit
+# cd frontend
+npm run lint-staged
