@@ -1,15 +1,22 @@
 {
-  "name": "nx-workspace",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@changesets/cli": "^2.27.5"
-  }
+	"name": "nx-workspace",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@changesets/cli": "^2.27.5"
+	},
+	"pnpm": {
+		"overrides": {
+			"@b12k/mvm": "0.0.10",
+			"@release-it/conventional-changelog": "5.1.1",
+			"release-it": "15.10.1"
+		}
+	}
 }
