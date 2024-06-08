@@ -4,6 +4,8 @@ const version = "${version}";
 const packageName = process.env.npm_package_name;
 const scope = packageName.split("/")[1];
 
+console.log(commitTemplate, "=== TEH TEMP");
+
 module.exports = {
 	plugins: {
 		"@release-it/conventional-changelog": {
