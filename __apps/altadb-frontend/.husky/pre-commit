@@ -1,5 +1,0 @@
-# run backend related commit commands in background
-set -e
-# ./backend/hooks/pre-commit
-# cd frontend
-# pnpm run lint-staged
