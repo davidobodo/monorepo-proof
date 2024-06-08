@@ -1,12 +1,15 @@
-const fs = require("fs");
+import fs from "fs";
 const commitTemplate = fs.readFileSync("./changelog-compact-commit-list").toString();
 const version = "${version}";
 const packageName = process.env.npm_package_name;
 const scope = packageName.split("/")[1];
+// const fs = require("fs");
+// const commitTemplate = fs.readFileSync("./changelog-compact-commit-list").toString();
+// const version = "${version}";
+// const packageName = process.env.npm_package_name;
+// const scope = packageName.split("/")[1];
 
-console.log(commitTemplate, "=== TEH TEMP");
-
-module.exports = {
+export default {
 	plugins: {
 		// "@release-it/conventional-changelog": {
 		// 	writerOpts: {
