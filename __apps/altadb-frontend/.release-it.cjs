@@ -8,16 +8,16 @@ console.log(commitTemplate, "=== TEH TEMP");
 
 module.exports = {
 	plugins: {
-		"@release-it/conventional-changelog": {
-			writerOpts: {
-				commitPartial: commitTemplate,
-			},
-			path: ".",
-			infile: "CHANGELOG.md",
-			gitRawCommitsOpts: {
-				path: ".",
-			},
-		},
+		// "@release-it/conventional-changelog": {
+		// 	writerOpts: {
+		// 		commitPartial: commitTemplate,
+		// 	},
+		// 	path: ".",
+		// 	infile: "CHANGELOG.md",
+		// 	gitRawCommitsOpts: {
+		// 		path: ".",
+		// 	},
+		// },
 	},
 	git: {
 		push: true,
