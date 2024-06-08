@@ -4,7 +4,7 @@
 		"push": true,
 		"tagName": "${process.env.npm_package_name}-v${version}",
 		"commitsPath": ".",
-		"commitMessage": "front - :zap: released versions v${version} [no ci]",
+		"commitMessage": "front - :zap: released versions v${version} [no ci] --no-verify",
 		"requireCommits": true,
 		"requireCommitsFail": false,
 		"requireCleanWorkingDir": false,
@@ -19,7 +19,6 @@
 		"releaseName": "${process.env.npm_package_name}-v${version}"
 	},
 	"hooks": {
-		"before:init": ["git update-index -q --refresh"],
-		"before:git:release": ["git add --all"]
+		"before:init": ["git update-index -q --refresh"]
 	}
 }
