@@ -1,14 +1,16 @@
 {
-	"name": "altadb-frontend",
+	"name": "@znt/altadb-frontend",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.5.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"test": "vitest"
+		"test": "vitest",
+		"release": "release-it",
+		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
 		"axios": "^1.7.2",
@@ -32,6 +34,29 @@
 		"typescript": "^5.2.2",
 		"vite": "^5.2.0",
 		"vitest": "^1.6.0",
-		"@znt/release": "workspace:*"
+		"release-it": "17.3.0",
+		"@znt/release": "workspace:*",
+		"husky": "8.0.3",
+		"lint-staged": "^15.2.2",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"@commitlint/cli": "17.6.1",
+		"@commitlint/config-conventional": "17.6.1"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"eslint --fix"
+		]
 	}
 }

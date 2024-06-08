@@ -4,19 +4,41 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"commit": "cz"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@changesets/cli": "^2.27.5"
+		"@commitlint/cli": "17.6.1",
+		"@commitlint/config-conventional": "17.6.1",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"husky": "8.0.3",
+		"lint-staged": "^15.2.5"
 	},
 	"pnpm": {
 		"overrides": {
 			"@b12k/mvm": "0.0.10",
 			"@release-it/conventional-changelog": "5.1.1",
-			"release-it": "15.10.1"
+			"release-it": "17.3.0"
 		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"eslint --fix",
+			"git add"
+		]
 	}
 }

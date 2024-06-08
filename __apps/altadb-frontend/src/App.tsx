@@ -5,6 +5,8 @@ import { Button } from "ui";
 
 const API_URL = "http://127.0.0.1:5002";
 
+console.log("In here");
+
 const getData = () => {
 	return axios.get(`${API_URL}/api/data`);
 };
@@ -34,10 +36,16 @@ function App() {
 			alert(error);
 		}
 	};
+
+	console.log("In her");
 	return (
 		<>
 			<h1>THE SECOND APPLICATION</h1>
-			<p>Add paragraph into second app, and now alter it. This day</p>
+			<p>
+				Add paragraph into second app, and now alter it. This day at noon with more text. Add more text, another and more
+				again and more text again here and therezx zz and i am here
+			</p>
+			<p>Add new paragraph</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />
 
