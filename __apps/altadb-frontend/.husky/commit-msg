@@ -4,8 +4,6 @@
 # Determine whether we have a tty available by trying to access it.
 # This allows us to deal with UI based gitclient's like Atlassian SourceTree.
 # NOTE: "exec < /dev/tty" sets stdin to the keyboard
-echo "This is my log"
-
 stdin_available=1
 (exec < /dev/tty) 2> /dev/null || stdin_available=0
 
