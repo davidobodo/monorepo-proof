@@ -1,5 +1,5 @@
 const fs = require("fs");
-const commitTemplate = fs.readFileSync("./changelog-compact-commit-list.hbs").toString();
+const commitTemplate = fs.readFileSync("./changelog-compact-commit-list").toString();
 const version = "${version}";
 const packageName = process.env.npm_package_name;
 const scope = packageName.split("/")[1];
@@ -7,9 +7,9 @@ const scope = packageName.split("/")[1];
 module.exports = {
 	plugins: {
 		"@release-it/conventional-changelog": {
-			// writerOpts: {
-			// 	commitPartial: commitTemplate,
-			// },
+			writerOpts: {
+				commitPartial: commitTemplate,
+			},
 			path: ".",
 			infile: "CHANGELOG.md",
 			gitRawCommitsOpts: {
