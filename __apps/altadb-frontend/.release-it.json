@@ -1,14 +1,5 @@
 {
-	"plugins": {
-		"@release-it/conventional-changelog": {
-			"path": ".",
-			"infile": "CHANGELOG.md",
-			"preset": "conventionalcommits",
-			"gitRawCommitsOpts": {
-				"path": "."
-			}
-		}
-	},
+	"plugins": {},
 	"git": {
 		"push": true,
 		"tagName": "${process.env.npm_package_name}-v${version}",
@@ -17,7 +8,7 @@
 		"requireCommits": true,
 		"requireCommitsFail": false,
 		"requireCleanWorkingDir": false,
-		"changelog": ""
+		"changelog": "npx auto-changelog --stdout --commit-limit false -u --breaking-pattern BREAKING CHANGE:feat --template ./changelog-compact-commit-list.hbs "
 	},
 	"npm": {
 		"publish": false,
