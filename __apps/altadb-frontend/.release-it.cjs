@@ -27,6 +27,8 @@ module.exports = {
 		requireCommits: true,
 		requireCommitsFail: false,
 		requireCleanWorkingDir: false,
+		changelog:
+			"npx auto-changelog --stdout --commit-limit false -u --breaking-pattern BREAKING CHANGE:feat --template ./changelog-compact-commit-list.hbs ",
 	},
 	npm: {
 		publish: false,
