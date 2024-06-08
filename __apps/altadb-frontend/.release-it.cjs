@@ -7,8 +7,13 @@ const scope = packageName.split("/")[1];
 module.exports = {
 	plugins: {
 		"@release-it/conventional-changelog": {
-			writerOpts: {
-				commitPartial: commitTemplate,
+			// writerOpts: {
+			// 	commitPartial: commitTemplate,
+			// },
+			path: ".",
+			infile: "CHANGELOG.md",
+			gitRawCommitsOpts: {
+				path: ".",
 			},
 		},
 	},
