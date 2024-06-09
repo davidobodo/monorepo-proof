@@ -7,9 +7,23 @@ import semver from "semver";
 import concat from "concat-stream";
 
 class ConventionalChangelog extends Plugin {
-	static disablePlugin(options) {
-		return options.ignoreRecommendedBump ? null : "version";
-	}
+	// constructor(payload) {
+	// 	const { config, logger } = payload;
+	// 	super();
+
+	// 	// console.log(payload.container, "TEH PAYLOAD");
+	// 	// console.log(config, "======TEH CONFIG");
+	// 	// console.log(logger, "======TEH LOGGER");
+	// 	this.config = payload.container.config;
+	// 	this.logger = payload.container.log;
+	// 	// this.config = config;
+	// 	// this.logger = logger;
+	// }
+
+	// static disablePlugin(options) {
+	// 	// return "version";
+	// 	return options.ignoreRecommendedBump ? null : "version";
+	// }
 
 	getInitialOptions(options, namespace) {
 		const tagName = options.git ? options.git.tagName : null;
@@ -18,6 +32,7 @@ class ConventionalChangelog extends Plugin {
 	}
 
 	async getChangelog(latestVersion) {
+		console.log(latestVersion, "==== THE LATEST");
 		if (!latestVersion) latestVersion = "0.0.0";
 		if (!this.config.isIncrement) {
 			this.setContext({ version: latestVersion });
@@ -55,12 +70,14 @@ class ConventionalChangelog extends Plugin {
 				return null;
 			}
 		} catch (err) {
+			this.logger("Errrp");
 			this.debug({ err });
 			throw err;
 		}
 	}
 
 	getChangelogStream(rawOptions = {}) {
+		console.log("TRYING TO GENERATE");
 		const { version } = this.getContext();
 		const { isIncrement } = this.config;
 		const { latestTag, secondLatestTag, tagTemplate } = this.config.getContext();
@@ -75,6 +92,8 @@ class ConventionalChangelog extends Plugin {
 		const mergedContext = Object.assign({ version, previousTag, currentTag }, context);
 		const mergedGitRawCommitsOpts = Object.assign({ debug, from: previousTag }, gitRawCommitsOpts);
 
+		console.log(writerOpts, "=== TEH OPTIONS");
+		this.debug("Hello");
 		this.debug("conventionalChangelog", {
 			options,
 			context: mergedContext,
@@ -83,6 +102,9 @@ class ConventionalChangelog extends Plugin {
 			writerOpts,
 		});
 
+		const resp = conventionalChangelog(options, mergedContext, mergedGitRawCommitsOpts, parserOpts, writerOpts);
+
+		console.log(resp, "==THE RESOI");
 		return conventionalChangelog(options, mergedContext, mergedGitRawCommitsOpts, parserOpts, writerOpts);
 	}
 
@@ -106,11 +128,13 @@ class ConventionalChangelog extends Plugin {
 	}
 
 	async writeChangelog() {
+		console.log("BEFORE WRITING CHANGE");
 		const { infile, header: _header = "" } = this.options;
 		let { changelog } = this.config.getContext();
 		const header = _header.split(/\r\n|\r|\n/g).join(EOL);
 
 		let hasInfile = false;
+		console.log("AT TRHIS POINT");
 		try {
 			fs.accessSync(infile);
 			hasInfile = true;
@@ -121,6 +145,7 @@ class ConventionalChangelog extends Plugin {
 		let previousChangelog = "";
 		try {
 			previousChangelog = await this.getPreviousChangelog();
+			console.log("=========PREVIOUS LOG", previousChangelog);
 			previousChangelog = previousChangelog.replace(header, "");
 		} catch (err) {
 			this.debug(err);
@@ -167,6 +192,7 @@ class ConventionalChangelog extends Plugin {
 	async beforeRelease() {
 		const { infile } = this.options;
 		const { isDryRun } = this.config;
+		console.log("==== BEFORE MY RELEASE");
 
 		this.log.exec(`Writing changelog to ${infile}`, isDryRun);
 

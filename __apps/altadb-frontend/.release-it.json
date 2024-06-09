@@ -1,7 +1,13 @@
 {
 	"plugins": {
-		"./plugins/sample.js": {},
-		"./plugins/conv.js": {}
+		"./plugins/conv.js": {
+			"path": ".",
+			"infile": "CHANGELOG.md",
+			"preset": "conventionalcommits",
+			"gitRawCommitsOpts": {
+				"path": "."
+			}
+		}
 	},
 	"git": {
 		"push": true,
