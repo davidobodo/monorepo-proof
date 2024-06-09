@@ -10,7 +10,7 @@
 		"requireCommits": true,
 		"requireCommitsFail": false,
 		"requireCleanWorkingDir": false,
-		"changelog": "npx auto-changelog --stdout --commit-limit false -u --breaking-pattern BREAKING CHANGE:feat --template ./changelog-compact-commit-list.hbs "
+		"changelog": "npx auto-changelog --stdout --config .auto-changelog"
 	},
 	"npm": {
 		"publish": false,
