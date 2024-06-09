@@ -1,22 +1,16 @@
 {
-	"plugins": {
-		"./plugins/conv.js": {
-			"path": ".",
-			"infile": "CHANGELOG.md",
-			"preset": "conventionalcommits",
-			"gitRawCommitsOpts": {
-				"path": "."
-			}
-		}
-	},
+	"plugins": {},
 	"git": {
 		"push": true,
 		"tagName": "${process.env.npm_package_name}-v${version}",
+		"tag": true,
+		"getLatestTagFromAllRefs": false,
 		"commitsPath": ".",
 		"commitMessage": "front - :zap: released versions v${version} [no ci] --no-verify",
 		"requireCommits": true,
 		"requireCommitsFail": false,
-		"requireCleanWorkingDir": false
+		"requireCleanWorkingDir": false,
+		"changelog": "npx auto-changelog --stdout --commit-limit false -u --breaking-pattern BREAKING CHANGE:feat --template ./changelog-compact-commit-list.hbs "
 	},
 	"npm": {
 		"publish": false,

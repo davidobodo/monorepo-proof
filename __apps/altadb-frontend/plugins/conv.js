@@ -5,6 +5,7 @@ import { Bumper } from "conventional-recommended-bump";
 import conventionalChangelog from "conventional-changelog";
 import semver from "semver";
 import concat from "concat-stream";
+import { Console } from "console";
 
 class ConventionalChangelog extends Plugin {
 	// constructor(payload) {
@@ -77,12 +78,14 @@ class ConventionalChangelog extends Plugin {
 	}
 
 	getChangelogStream(rawOptions = {}) {
-		console.log("TRYING TO GENERATE");
+		console.log("TRYING TO GENERATE", process.env.npm_package_name);
 		const { version } = this.getContext();
 		const { isIncrement } = this.config;
+		console.log(this.config.getContext(), "=== CONFIG CONTEXT");
 		const { latestTag, secondLatestTag, tagTemplate } = this.config.getContext();
 		const currentTag = isIncrement ? (tagTemplate ? tagTemplate.replace("${version}", version) : null) : latestTag;
 		const previousTag = isIncrement ? latestTag : secondLatestTag;
+		console.log(currentTag, previousTag, "=== THE TAGS");
 		const releaseCount = rawOptions.releaseCount === 0 ? 0 : isIncrement ? 1 : 2;
 		const debug = this.config.isDebug ? this.debug : null;
 		const mergedOptions = Object.assign({}, { releaseCount }, this.options);
