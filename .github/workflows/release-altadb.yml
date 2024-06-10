@@ -1,0 +1,9 @@
+name: Release AltaDB
+
+on: workflow_dispatch
+
+jobs:
+ generate-changelog:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "Let's release altadb"
