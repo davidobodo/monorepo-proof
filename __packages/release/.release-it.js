@@ -35,3 +35,30 @@ module.exports = {
 		"before:git:release": ["mvm-update", "git add --all"],
 	},
 };
+
+// "@release-it/conventional-changelog": {
+// 	"path": ".",
+// 	"infile": "CHANGELOG.md",
+// 	"preset": "conventionalcommits",
+// 	"gitRawCommitsOpts": {
+// 		"path": "."
+// 	}
+// }
+
+// "@release-it/conventional-changelog": {
+// 	"path": ".",
+// 	"infile": "CHANGELOG.md",
+// 	"preset": "conventionalcommits",
+// 	"gitRawCommitsOpts": {
+// 		"path": "."
+// 	}
+// }
+
+// "./plugins/conv.js": {
+// 	"path": ".",
+// 	"infile": "CHANGELOG.md",
+// 	"preset": "conventionalcommits",
+// 	"gitRawCommitsOpts": {
+// 		"path": "."
+// 	}
+// }
