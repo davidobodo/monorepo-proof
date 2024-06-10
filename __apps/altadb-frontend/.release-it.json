@@ -9,8 +9,7 @@
 		"commitMessage": "front - :zap: released versions v${version} [no ci] --no-verify",
 		"requireCommits": true,
 		"requireCommitsFail": false,
-		"requireCleanWorkingDir": false,
-		"changelog": "npx auto-changelog --stdout --commit-limit false -u --breaking-pattern BREAKING CHANGE:feat --template ./changelog-compact-commit-list.hbs "
+		"requireCleanWorkingDir": false
 	},
 	"npm": {
 		"publish": false,
