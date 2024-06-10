@@ -22,3 +22,4 @@ jobs:
      working-directory: ${{ env.working-directory }}
    - name: Run release
      run: pnpm run releaseci
+     working-directory: ${{ env.working-directory }}
