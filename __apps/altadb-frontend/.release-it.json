@@ -9,7 +9,8 @@
 		"commitMessage": "front - :zap: released versions v${version} [no ci] --no-verify",
 		"requireCommits": true,
 		"requireCommitsFail": false,
-		"requireCleanWorkingDir": false
+		"requireCleanWorkingDir": false,
+		"changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}"
 	},
 	"npm": {
 		"publish": false,
