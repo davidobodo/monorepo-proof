@@ -10,7 +10,7 @@
 		"requireCommits": true,
 		"requireCommitsFail": false,
 		"requireCleanWorkingDir": false,
-		"changelog": "git log --pretty=format:\"* %s by @%an in #%h\" ${from}...${to} | grep \":zap:\""
+		"changelog": "git log --pretty=format:\"* %s by %an in #%h\" ${from}...${to} | grep \":zap:\""
 	},
 	"npm": {
 		"publish": false,
