@@ -20,6 +20,10 @@ jobs:
    - name: Install dependencies
      run: pnpm install
      working-directory: ${{ env.working-directory }}
+   - name: Initialize the git user
+     run: |
+      git config --global user.email "obododavid5@gmail.com"
+      git config --global user.name "davidobodo"
    - name: Run release
      run: pnpm run releaseci
      working-directory: ${{ env.working-directory }}
