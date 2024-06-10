@@ -1,0 +1,7 @@
+{
+	"template": "./changelog-compact-commit-list.hbs",
+	"tagPrefix": "@znt/",
+	"unreleased": true,
+	"commitLimit": false,
+	"startingDate": "9-06-24"
+}

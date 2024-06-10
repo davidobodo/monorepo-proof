@@ -38,7 +38,7 @@ function App() {
 	return (
 		<>
 			<h1>THE FIRST APPLICATION</h1>
-			<p>Add a paragraph to the first app</p>
+			<p>Add a paragraph to the first app dshjsh</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />
 

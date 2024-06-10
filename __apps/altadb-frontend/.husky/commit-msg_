@@ -19,8 +19,8 @@ if [ $stdin_available -eq 1 ]; then
     fi
 fi
 
-# cz check --allow-abort --commit-msg-file "$1"
-# exit_code=$?
+cz check --allow-abort --commit-msg-file "$1"
+exit_code=$?
 
 # If we fail to find the commitizen binary (command not found), let's retry by executing as a python module.
 # This is the case for Atlassian SourceTree, where $PATH deviates from the user's shell $PATH.

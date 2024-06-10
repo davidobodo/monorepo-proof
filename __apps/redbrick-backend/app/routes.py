@@ -12,5 +12,5 @@ def get_data():
 
 @app.route('/api/status', methods=['GET'])
 def get_status():
-    status = {"status": "Everything is running smoothly from Redbrick Server."}
+    status = {"status": "Everything is running smoothly from Redbrick Server.123"}
     return jsonify(status)

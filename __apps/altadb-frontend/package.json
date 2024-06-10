@@ -1,7 +1,7 @@
 {
 	"name": "@znt/altadb-frontend",
 	"private": true,
-	"version": "0.5.0",
+	"version": "2.3.10",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -10,7 +10,8 @@
 		"preview": "vite preview",
 		"test": "vitest",
 		"release": "release-it",
-		"lint-staged": "lint-staged"
+		"lint-staged": "lint-staged",
+		"changelog": "auto-changelog -p --stdout --config .auto-changelog"
 	},
 	"dependencies": {
 		"axios": "^1.7.2",
@@ -19,6 +20,8 @@
 		"ui": "workspace:*"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "17.6.1",
+		"@commitlint/config-conventional": "17.6.1",
 		"@testing-library/jest-dom": "^6.4.5",
 		"@testing-library/react": "^15.0.7",
 		"@types/react": "^18.2.66",
@@ -26,22 +29,25 @@
 		"@typescript-eslint/eslint-plugin": "^7.2.0",
 		"@typescript-eslint/parser": "^7.2.0",
 		"@vitejs/plugin-react": "^4.2.1",
+		"@znt/release": "workspace:*",
+		"auto-changelog": "^2.4.0",
+		"commitizen": "^4.3.0",
+		"concat-stream": "^2.0.0",
+		"conventional-changelog": "^6.0.0",
+		"conventional-recommended-bump": "^10.0.0",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.4.6",
+		"husky": "8.0.3",
 		"jsdom": "^24.1.0",
+		"lint-staged": "^15.2.2",
 		"react": "^18.3.1",
+		"release-it": "17.3.0",
+		"semver": "^7.6.2",
 		"typescript": "^5.2.2",
 		"vite": "^5.2.0",
-		"vitest": "^1.6.0",
-		"release-it": "17.3.0",
-		"@znt/release": "workspace:*",
-		"husky": "8.0.3",
-		"lint-staged": "^15.2.2",
-		"commitizen": "^4.3.0",
-		"cz-conventional-changelog": "^3.3.0",
-		"@commitlint/cli": "17.6.1",
-		"@commitlint/config-conventional": "17.6.1"
+		"vitest": "^1.6.0"
 	},
 	"config": {
 		"commitizen": {
