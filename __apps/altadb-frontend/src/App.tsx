@@ -44,7 +44,7 @@ function App() {
 			<p>
 				dfs Add paragraph into second app, and now alter it. This day at noon with more text. Add more text, another and
 				more again and more text again here and therezx zz and i am here abcdefgh sds abcdefgh fhjgd ok i an sdfsf zxcxzcjhj
-				today anaa sda 2345 asadbd]sdfsjk
+				today anaa sda 2345 asadbd]sdfsjkxz
 			</p>
 			<p>Add new paragraph</p>
 			<Button onClick={handleGetData} text="Get Data" />
