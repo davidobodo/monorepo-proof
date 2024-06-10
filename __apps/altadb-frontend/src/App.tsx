@@ -38,6 +38,7 @@ function App() {
 		<>
 			<h1>THE SECOND APPLICATION</h1>
 			<p>Add paragraph into second app, and now alter it. This day</p>
+			<p>Add a second paragraph to the altadb frontend</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />
 
