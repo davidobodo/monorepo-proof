@@ -10,7 +10,7 @@
 		"requireCommits": true,
 		"requireCommitsFail": false,
 		"requireCleanWorkingDir": false,
-		"changelog": "npx auto-changelog --stdout --config .auto-changelog"
+		"changelog": "pnpm run changelog"
 	},
 	"npm": {
 		"publish": false,
