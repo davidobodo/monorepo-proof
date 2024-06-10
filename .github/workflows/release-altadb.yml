@@ -5,5 +5,20 @@ on: workflow_dispatch
 jobs:
  generate-changelog:
   runs-on: ubuntu-latest
+  env:
+   working-directory: ./__apps/altadb-frontend
   steps:
    - run: echo "Let's release altadb"
+   - name: Checkout code
+     uses: actions/checkout@v4
+     with:
+      fetch-depth: 0
+   - name: Setup pnpm
+     uses: pnpm/action-setup@v2
+     with:
+      version: 9.1.3
+   - name: Install dependencies
+     run: pnpm install
+     working-directory: ${{ env.working-directory }}
+   - name: Run release
+     run: pnpm run releaseci
