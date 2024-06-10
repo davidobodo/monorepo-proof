@@ -12,5 +12,5 @@ def get_data():
 
 @app.route('/api/status', methods=['GET'])
 def get_status():
-    status = {"status": "Everything is running smoothly from AltaDB Server1"}
+    status = {"status": "Everything is running smoothly from AltaDB Server12"}
     return jsonify(status)
