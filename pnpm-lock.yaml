@@ -12,6 +12,10 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      '@changesets/changelog-git':
+        specifier: ^0.2.0
+        version: 0.2.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.5
