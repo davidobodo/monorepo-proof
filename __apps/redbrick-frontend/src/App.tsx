@@ -39,6 +39,10 @@ function App() {
 		<>
 			<h1>THE FIRST APPLICATION</h1>
 			<p>Add a paragraph to the first app dshjsh</p>
+			<p>Add a second paragraph to the first app dshjsh</p>
+			<p>Add a third paragraph to the first app dshjsh</p>
+			<p>Add a fourth paragraph to the first app dshjsh</p>
+			<p>Add a fifth paragraph to the first app sshjsh</p>
 			<Button onClick={handleGetData} text="Get Data" />
 			<Button onClick={handleGetStatus} text="Get Status" />
 
