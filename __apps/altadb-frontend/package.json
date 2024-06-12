@@ -1,5 +1,5 @@
 {
-	"name": "@znt/altadb-frontend",
+	"name": "altadb",
 	"private": true,
 	"version": "2.3.11",
 	"type": "module",
