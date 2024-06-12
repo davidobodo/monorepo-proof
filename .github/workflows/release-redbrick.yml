@@ -1,0 +1,29 @@
+name: Release Redbrick
+
+on: workflow_dispatch
+
+jobs:
+ generate-changelog:
+  runs-on: ubuntu-latest
+  env:
+   working-directory: ./__apps/redbrick-frontend
+  steps:
+   - run: echo "Let's release altadb"
+   - name: Checkout code
+     uses: actions/checkout@v4
+     with:
+      fetch-depth: 0
+   - name: Setup pnpm
+     uses: pnpm/action-setup@v2
+     with:
+      version: 9.1.3
+   - name: Install dependencies
+     run: pnpm install
+     working-directory: ${{ env.working-directory }}
+   - name: Initialize the git user
+     run: |
+      git config --global user.email "obododavid5@gmail.com"
+      git config --global user.name "davidobodo"
+   - name: Run release
+     run: pnpm run releaseci
+     working-directory: ${{ env.working-directory }}
